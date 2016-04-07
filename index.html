@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+		body {
+			background: #4E4E4E;
+		}
+		#content {
+		}
+		#page-preloader {
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #4e4e4e;
+			z-index: 100500;
+			cursor: wait;
+		}
+		#page-preloader .spinner {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -16px 0 0 -16px;
+			cursor: wait;
+		}
+		.spinner i {
+			color: #00cece;
+			font-size: 3em;
+			cursor: wait;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Веб разработка, верстка, адаптация сайта, создание, все устройства - Михаил Петейчук Web Developer.">
+	<meta name="keywords" content="Веб разработка, Веб верстка, адаптивная верстка, адаптация сайта, HTML, CSS, JavaScript, jQuery, LESS, Jade, div, psd, верстать сайт, валидная, сематическая, параласт эффект">
+	<title>Создание адаптивных сайтов - Nggawe Camping adaptif | Михаил Петейчук - Michael Peteichuk</title> 
+	<link rel="canonical" href="http://peteichuk.com" />
+	<!-- Указание языка сайта-->
+	<link rel="alternate" hreflang="ru" href="http://peteichuk.com">
+	<!-- добавленные -->
+	<meta name="robots" content="Index,follow">
+	<!-- Индексирование -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- Распознание номеров телефона -->
+	<meta name="format-detection" content="address=no">
+	<!-- Распознание адресов -->
+	<link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+</head>
+<body data-spy="scroll">
+	<div id="page-preloader">
+		<span class="spinner">
+			<i class="fa fa-spinner fa-spin"></i>
+		</span>
+	</div>
+	<header>
+		<div class="navigations-mobile" id="mobile">
+			<div id="hamburger" class="hamburglar is-closed">
+				<div class="burger-icon">
+					<div class="burger-container">
+						<span class="burger-bun-top"></span>
+						<span class="burger-filling"></span>
+						<span class="burger-bun-bot"></span>
+					</div>
+				</div>
+				<div class="burger-ring">
+					<svg class="svg-ring">
+						<path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
+					</svg>
+				</div>
+				<svg width="0" height="0">
+					<mask id="mask">
+						<path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
+					</mask>
+				</svg>
+				<div class="path-burger">
+					<div class="animate-path">
+						<div class="path-rotation"></div>
+					</div>
+				</div>
+			</div>
+			<div class="one">
+				<ul class="nav-tabs" id="myTab">
+					<li class="active">
+						<a href="#post-show" hreflang="ru" data-toggle="tab">Главная</a>
+					</li>
+					<li>
+						<a href="#about" hreflang="ru" data-toggle="tab">Обо мне</a>
+					</li>
+					<li>
+						<a href="#profi" hreflang="ru" data-toggle="tab">Навыки</a>
+					</li>
+					<li>
+						<a href="#info" hreflang="ru" data-toggle="tab">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="navigations" id="desktop">
+			<div class="center nav">
+				<ul class="nav-tabs" id="myTab">
+					<li class="active">
+						<a href="#post-show" hreflang="ru" data-toggle="tab">Главная</a>
+					</li>
+					<li id="activeClassMyTab1">
+						<a href="#about" hreflang="ru" data-toggle="tab">Обо мне</a>
+					</li>
+					<li>
+						<div class="logo">
+							<div class="we">
+								<p class="w">w</p>
+								<p class="e">e</p> <i class="b"></i>
+							</div>
+							<div class="title">Peteichuk</div>
+						</div>
+					</li>
+					<li id="activeClassMyTab2">
+						<a href="#profi" hreflang="ru" data-toggle="tab">Навыки</a>
+					</li>
+					<li id="activeClassMyTab3">
+						<a href="#info" hreflang="ru" data-toggle="tab">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="content">
+			<div id="post-show" class="post-show z-i0">
+				<div class="post-show-img" id="img-parallax">
+					<video id="video" autobuffer autoloop loop autoplay poster="video/Hello-World.jpg">
+						<source src="video/Hello-World.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+						<source src="video/Hello-World.ogv" type='video/ogg; codecs="theora, vorbis"'>
+						<source src="video/Hello-World.webm" type='video/webm; codecs="vp8, vorbis"'></video>
+				</div>
+				<div class="center" id="hitop">
+					<h1 class="center">Я Михаил Петейчук</h1>
+					<br>
+					<strong>Я Front-End разработчик:</strong>
+					<p>
+						Занимаюсь версткой веб страниц под различные устройства.
+					</p>
+					<div class="devise">
+						<i class="fa fa-television"></i>
+						<i class="fa fa-desktop"></i>
+						<i class="fa fa-laptop"></i>
+						<i class="fa fa-tablet"></i>
+						<i class="fa fa-mobile"></i>
+					</div>
+				</div>
+				<div class="center down-block" id="hibtn">
+					<i class="down fa fa-angle-double-down"></i>
+				</div>
+			</div>
+			<div class="about" id="about">
+				
+			</div>
+			<div class="object-non-visible" id="portfolio">
+				<h1 class="center margins" id="p1">Портфолио</h1>
+				<div class="nav-portfolio">
+					<button id="all" class="active">Все</button>
+					<button id="block">Блочные</button>
+					<button id="adaptive">Адаптивные</button>
+					<button id="landing-page">Landing Page</button>
+				</div>
+				<div class="cb"></div>
+				<div class="content-portfolio">
+					<div class="content-center-portfolio">
+						<div class="image-box landing-page-c">
+							<div class="moda3 modal" id="modal3" style="display: none;">
+								<div class="wrap">
+									<div class="tr">
+										<div class="td">
+											<div class="data"> <i class="svg close" title="Закрыть"></i>
+												<div class="content">
+													<div class="termofuse">
+														<div class="title">Сайт визитка</div>
+														<div class="content-modal">
+															<p>Создание с нуля</p>
+															<a href="http://peteichuk.com">Перейти на сайт<i class="fa fa-link"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#modal3" class="overlay-container">
+								<span class="obj">
+									<img src="images/Portfolio/peteichuk.png" alt="peteichuk.com"></span>
+								<span class="btn-title">www.peteichuk.com</span>
+							</a>
+						</div>
+						<div class="image-box block-c">
+							<div class="modal modal" id="modal1" style="display: none;">
+								<div class="wrap">
+									<div class="tr">
+										<div class="td">
+											<div class="data">
+												<i class="svg close" title="Закрыть"></i>
+												<div class="content">
+													<div class="termofuse">
+														<div class="title">Сайт выставка</div>
+														<div class="content-modal">
+															<p>Верстка HTML + CSS</p>
+															<a href="http://fur-expo.com">Перейти на сайт<i class="fa fa-link"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#modal1" class="overlay-container">
+								<span class="obj">
+									<img src="images/Portfolio/fur.png" alt="fur-expo.com"></span>
+								<span class="btn-title">www.fur-expo.com</span>
+							</a>
+						</div>
+						<div class="image-box adaptive-c">
+							<div class="modal4 modal" id="modal4" style="display: none;">
+								<div class="wrap">
+									<div class="tr">
+										<div class="td">
+											<div class="data">
+												<i class="svg close" title="Закрыть"></i>
+												<div class="content">
+													<div class="termofuse">
+														<div class="title">Раскрутка сайтов</div>
+														<div class="content-modal">
+															<p>Верстка уже по готовым CSS стилям, только добавление статических HTML страниц</p>
+															<a href="http://topseo.ua">Перейти на сайт<i class="fa fa-link"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#modal4" class="overlay-container">
+								<span class="obj">
+									<img src="images/Portfolio/topseo.png" alt="topseo.ua"></span>
+								<span class="btn-title">www.topseo.ua</span>
+							</a>
+						</div>
+						<div class="image-box block-c">
+							<div class="modal2 modal" id="modal2" style="display: none;">
+								<div class="wrap">
+									<div class="tr">
+										<div class="td">
+											<div class="data">
+												<i class="svg close" title="Закрыть"></i>
+												<div class="content">
+													<div class="termofuse">
+														<div class="title">Интернет магазин</div>
+														<div class="content-modal">
+															<p>Верстка блога</p>
+															<a href="http://http://mol.com.ua/blog.html">Перейти на сайт<i class="fa fa-link"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#modal2" class="overlay-container">
+								<span class="obj">
+									<img src="images/Portfolio/mol.png" alt="mol.com.ua"></span>
+								<span class="btn-title">www.mol.com.ua</span>
+							</a>
+						</div>
+						<div class="image-box adaptive-c">
+							<div class="modal2 modal" id="modal2" style="display: none;">
+								<div class="wrap">
+									<div class="tr">
+										<div class="td">
+											<div class="data">
+												<i class="svg close" title="Закрыть"></i>
+												<div class="content">
+													<div class="termofuse">
+														<div class="title">Интернет магазин</div>
+														<div class="content-modal">
+															<p>Верстка Сайта</p>
+															<a href="http://http://kedoff.net">Перейти на сайт<i class="fa fa-link"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="#modal2" class="overlay-container">
+								<span class="obj">
+									<img src="images/Portfolio/kedoff.png" alt="kedoff.net"></span>
+								<span class="btn-title">www.kedoff.net</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="cb"></div>
+			</div>
+			<div class="cb"></div>
+			<div class="object-non-visible" id="profi">
+				<br>
+				<h1 class="center margins">Навыки</h1>
+				<div class="table">
+					<div class="colum">
+						<ul>
+							<li>Имею опыт с такими технологиями:</li>
+							<li>HTML5</li>
+							<li>CSS3</li>
+							<li>Less</li>
+							<li>JavaScript</li>
+						</ul>
+					</div>
+					<div class="colum">
+						<ul>
+							<li>Использую для верстки следующее:</li>
+							<li>Photoshop от Adobe</li>
+							<li>Sublime Text</li>
+							<li>Grunt</li>
+							<li>Bower</li>
+							<li>Git</li>
+							<li>PerfectPixel</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="cb"></div>
+			<div class="object-non-visible" id="info">
+				<div class="messages-site">
+					<h1 class="center margins">Контакты</h1>
+					<div class="contact">
+						<div class="table">
+							<div class="colum">
+								<ul>
+									<li>
+										<p class="center">Мои контактные данные:</p>
+										<span>
+											<i class="fa fa-phone fa-2x"></i>
+											<a href="tel:+380967492302" title="Позвонить сейчас" target="_blank">+38 (096) 749-23-02</a>
+										</span>
+										<span>
+											<i class="fa fa-at fa-2x"></i>
+											<a href="mailto:michael.peteichuk@gmail.com" title="Написать сейчас" target="_blank">michael.peteichuk@gmail.com</a>
+										</span>
+										<span>
+											<i class="fa fa-skype fa-2x"></i>
+											<a href="skype:peteichuk" title="Позвонить на Skype" target="_blank">Peteichuk</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="colum border-dashed">
+								<ul>
+									<li>
+										<p class="center">График приёма звонков:</p>
+										<span>Понедельник - Четверг с 9:00 - 18:00</span>
+										<span>Пятница с 9:00 - 12:00</span>
+										<span>Суббота, Воскресенье - Выходной</span>
+										<span>Время указано по Киевскому часовому поясу (UTC+02:00)</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="table">
+						<iframe frameborder="0" style="display : none;" id="gform" name="gform"></iframe>
+						<div class="ss-form-submit" id="ass" style="display:none;">
+							<p class="title">Сообщение отправлено...</p>
+							<span id="iss">Написать еще?</span>
+						</div>
+						<div class="ss-form-container">
+							<h2 class="ss-form-title" dir="ltr">Написать Сообщение</h2>
+							<div class="ss-form2">
+								<form action="https://docs.google.com/forms/d/1TNd66YmDmPZq7lMkuioSKFcAw3R1BdVBI9S02-YVBcs/formResponse?embedded=false" method="POST" id="ss-form" target="gform" onsubmit="">
+									<div role="list" class="ss-question-list" style="padding-left: 0">
+										<div class="ss-form-question" role="listitem">
+											<div dir="auto" class="ss-item">
+												<div class="ss-form-entry">
+													<input class="in-lab input-infield input-full-width input-with-icon icon-envelope2" type="text" value name="entry.495711622" id="entry_495711622" dir="auto" aria-label="Ваше Имя:  Вы ничего не ввели" aria-required="true" required="" pattern=".*.*">
+													<label class="input-infield-label" id="l1" for="entry_495711622">
+														Name
+														<div class="ss-q-title">
+															<label for="itemView.getDomIdToLabel()" aria-label="Обязательное поле"></label>
+														</div>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="ss-form-question errorbox-good" role="listitem">
+											<div dir="auto" class="ss-item">
+												<div class="ss-form-entry">
+													<input class="in-lab input-infield input-full-width input-with-icon icon-envelope2" type="tel" value="" name="entry.745990907" id="entry_745990907" dir="auto" aria-label="Номер телефона:  Вы ничего не ввели" aria-required="true" required="" step="any">
+													<label class="input-infield-label" id="l2" for="entry_745990907">
+														Number
+														<div class="ss-q-title">
+															<label for="itemView.getDomIdToLabel()" aria-label="Обязательное поле"></label>
+														</div>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="ss-form-question" role="listitem">
+											<div dir="auto" class="ss-item">
+												<div class="ss-form-entry">
+													<input class="in-lab input-infield input-full-width input-with-icon icon-envelope" type="email" value="" name="entry.88743993" id="entry_88743993" dir="auto" aria-label="E-mail:  Вы ничего не ввели, или неправильно." aria-required="true" required="" pattern=".*@.*">
+													<label class="input-infield-label" id="l3" for="entry_88743993">
+														Email
+														<div class="ss-q-title">
+															<label for="itemView.getDomIdToLabel()" aria-label="Обязательное поле"></label>
+														</div>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="ss-form-question" role="listitem">
+											<div dir="auto" class="ss-item">
+												<div class="ss-form-entry">
+													<textarea type="text" name="entry.1131358883" value class="in-lab ss-q-short input-with-icon icon-envelope" id="entry_1131358883" dir="auto" aria-label="Сообщение  Вы ничего не ввели" aria-required="true" required="" pattern=".*.*"></textarea>
+													<label class="input-infield-label" id="l4" for="entry_1131358883">
+														Message
+														<div class="ss-q-title">
+															<label for="itemView.getDomIdToLabel()" aria-label="Обязательное поле"></label>
+														</div>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div id="navigation-table">
+											<div id="navigation-buttons" dir="ltr">
+												<div class="ss-form-question">
+													<input type="submit" name="submit" id="ss-submit" class=" ok"></div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="cb"></div>
+	<footer>
+		<div class="social">
+			<div class="layer">
+				<a href="https://www.linkedin.com/in/peteichuk" title="Посмотреть профиль Связаны" target="_blank">
+					<i class="fa fa-linkedin"></i>
+				</a>
+			</div>
+			<div class="layer">
+				<a href="mailto:michael.peteichuk@gmail.com" title="Написать разработчику" target="_blank">
+					<i class="fa fa-at"></i>
+				</a>
+			</div>
+			<div class="layer">
+				<a href="skype:peteichuk" title="Позвонить на Skype" target="_blank">
+					<i class="fa fa-skype"></i>
+				</a>
+			</div>
+			<div class="layer">
+				<a href="tel:+380967492302" title="Позвонить" target="_blank">
+					<i class="fa fa-phone"></i>
+				</a>
+			</div>
+		</div>
+		<div class="elements">
+			<a href="http://peteichuk.com" hreflang="ru" class="swing" title="Сайт визитка">http://peteichuk.com</a>
+		</div>
+	</footer>
+	<!-- style -->
+	<link rel="stylesheet" type="text/css" href="css/all.min.css?1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--Nav-->
+	<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="/js/all.min.js"></script>
+	<!--/Nav-->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-66278258-1', 'auto', { 'userId': 'USER_ID' });
+		ga('send', 'pageview');
+
+	</script>
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter31940791 = new Ya.Metrika({
+						id:31940791,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript>
+		<div>
+			<img src="https://mc.yandex.ru/watch/31940791" style="position:absolute; left:-9999px;" alt="" />
+		</div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+</body>
+</html>

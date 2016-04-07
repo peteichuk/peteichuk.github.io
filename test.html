@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+ 
+<html>
+ 
+<head>
+  <title>Untitled</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+   #test{
+      background-color:  #FF0000;
+       height: 250px;
+       width:  250px;
+       position: relative;
+       top: 300px;
+       left: 500px;
+    }
+   #show{
+       background-color:  #F4A460;
+       width:  200px;
+       position:  fixed;
+       top: 15px;
+       left: 300px;
+       z-index: 100;
+   }
+  body{
+    height: 5000px;
+    width:  5000px;
+  }
+  </style>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script>
+jQuery(function () {
+    var checkViewport = function (el) {
+        var minTop = jQuery(document).scrollTop(),
+            minLeft = jQuery(document).scrollLeft(),
+            maxTop = minTop + jQuery(window).height(),
+            maxLeft = minLeft + jQuery(window).width(),
+            $myElement = $(el),
+            elementOffset = $myElement.offset(),
+            elementHeight = $myElement.height(),
+            elementWidth = $myElement.width(),
+            heightUp = elementOffset.top > minTop ? 0 : minTop - elementOffset.top > elementHeight ? elementHeight : minTop - elementOffset.top,
+            heightDn = elementOffset.top + elementHeight < maxTop ? 0 : elementOffset.top + elementHeight - maxTop > elementHeight ? elementHeight : elementOffset.top + elementHeight - maxTop,
+            widthLeft = elementOffset.left > minLeft ? 0 : minLeft - elementOffset.left > elementWidth ? elementWidth : minLeft - elementOffset.left,
+            widthRight = elementOffset.left + elementWidth < maxLeft ? 0 : elementOffset.left + elementWidth - maxLeft > elementWidth ? elementWidth : elementOffset.left + elementWidth - maxLeft,
+            heightHide = Math.round(100 * (heightUp + heightDn) / elementHeight),
+            widthHide = Math.round(100 * (widthLeft + widthRight) / elementWidth);
+            (heightHide == 100 || widthHide == 100) && (heightHide = widthHide = "");
+            heightHide = heightHide ? "элемент скрыт на " + heightHide + "% по высоте<br>" : "";
+            widthHide = widthHide ? "элемент скрыт на " + widthHide + "% по ширине" : "";
+ 
+        if (elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft)) $("#show").html("элемент полностью виден");
+        else $("#show").html( heightHide + widthHide ||'элемент полностью скрыт')
+    };
+    jQuery.fn.scroll_resize_Complete = function (fn, ms) {
+        var timer = null;
+        this.resize(function () {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(fn, ms)
+        });
+        this.scroll(function () {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(fn, ms)
+        })
+    };
+    jQuery(window).scroll_resize_Complete(function () {
+        checkViewport("#test")
+    }, 50)
+    checkViewport("#test")
+});
+    </script>
+</head>
+<body>
+<div id="show"></div>
+<div id="test"></div>
+</body>
+</html>
