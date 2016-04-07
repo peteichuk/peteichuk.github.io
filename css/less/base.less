@@ -110,7 +110,6 @@ img {
 a {
 	font-family: 'Roboto', sans-serif;
 	text-decoration: none;
-	color: #009090;
 	margin: 0;
 	padding: 0;
 }
@@ -161,6 +160,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav {
 	height: 80px;
+}
+
+.container {
+	width: auto;
+	margin: 0 auto;
+
+	@media (min-width: @width-ss) {
+		width: 500px;
+	}
+	
+	@media (min-width: @width-ls) {
+		width: 750px;
+	}
+	
+	@media (min-width: @width-md) {
+		width: 1000px;
+	}
+	
+	@media (min-width: @width-lg) {
+		width: 1200px;
+	}
 }
 
 .cb {
@@ -311,7 +331,8 @@ header {
 	    position: relative;
 	    transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
 	    transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    transition: all 1s, transform 0.7s ease-in-out 0.4s, -webkit-transform 0.7s ease-in-out 0.4s;
+	    transition: all 1s, transform 0.7s ease-in-out 0.4s, 
+	    -webkit-transform 0.7s ease-in-out 0.4s;
 
 		p {
 			font-family: Papyrus, Sans-serif;
@@ -322,26 +343,27 @@ header {
 	    	position: absolute;
 	    	transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
 	    	transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s, -webkit-transform 0.7s ease-in-out 0.4s;
+	    	.transition (@args: all 1s);
+	    	.transform (@args: 0.7s ease-in-out 0.4s);
 		}
 
 		.w {
-			-webkit-transform: rotate(-90deg);
-			        transform: rotate(-90deg);
+			.transform (@args: rotate(-90deg));
 			left: 39px;
     		top: 1.5px;
-	    	transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s, -webkit-transform 0.7s ease-in-out 0.4s;
+	    	.transition (@args: all 1s);
+	    	.transform (@args: 0.7s ease-in-out 0.4s);
+	    	.transition (@args: all 1s);
 		}
 
 		.e {
 			left: 5px;
 			-webkit-transform: rotate(-180deg);
-			        transform: rotate(-180deg);
+			transform: rotate(-180deg);
 	    	transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
 	    	transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s, -webkit-transform 0.7s ease-in-out 0.4s;
+	    	transition: all 1s, transform 0.7s ease-in-out 0.4s, 
+	    	-webkit-transform 0.7s ease-in-out 0.4s;
 		}
 	}
 
@@ -407,10 +429,6 @@ header {
 	width: 100%;
 	position: fixed;
 	background: rgba(78, 78, 78, 0.6);
-    // -webkit-transition: all 0.3s ease-in-out;
-    // -moz-transition: all 0.3s ease-in-out;
-    // -o-transition: all 0.3s ease-in-out;
-    // -ms-transition: all 0.3s ease-in-out;
     .transition(@args: all 0.3s ease-in-out);
 
 	@media (min-width: @width-md) {
@@ -450,7 +468,7 @@ header {
 
 				&:nth-child(3n) {
 					padding: 0;
-					max-width: 93px;
+					max-width: 110px;
 				}
 
 				&:hover:nth-child(3n) {
@@ -484,10 +502,6 @@ header {
 	}
 
 	&.active {
-
-		.ic {
-			.sprite-retina (@button-up-x1);
-		}
 
 		.one {
 			display: block;
