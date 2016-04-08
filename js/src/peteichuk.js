@@ -40,30 +40,6 @@ $(function() {
 		    $('#desktop').removeClass('opacity');
 		}
 	});
-	//portfolio-gallerey
-	$('#all').click(function() {
-		$('.block-c, .adaptive-c, .landing-page-c').show(300);
-		$(this).addClass('active');
-		$('#landing-page, #block, #adaptive').removeClass('active');
-	});
-	$('#block').click(function() {
-		$('.block-c').show(300);
-		$('.adaptive-c, .landing-page-c').hide(300);
-		$(this).addClass('active');
-		$('#all, #adaptive, #landing-page').removeClass('active');
-	});
-	$('#adaptive').click(function() {
-		$('.block-c, .landing-page-c').hide(300);
-		$('.adaptive-c').show(300);
-		$(this).addClass('active');
-		$('#all, #block, #landing-page').removeClass('active');
-	});
-	$('#landing-page').click(function() {
-		$('.block-c, .adaptive-c').hide(300);
-		$('.landing-page-c').show(300);
-		$(this).addClass('active');
-		$('#all, #block, #adaptive').removeClass('active');
-	});
 	//open modal
 	$('.overlay-container').click(function(){
 		var id = $(this).attr('href');

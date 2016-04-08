@@ -254,51 +254,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-.table {
-	display: table;
-	width: 100%;
-
-	.colum {
-		display: block;
-	    vertical-align: top;
-	    margin: 10px auto 0;
-	    padding: 4px;
-	    text-align: center;
-	    width: auto;
-
-	    @media (min-width: @width-ss) {
-			display: table-cell;
-			width: 48%;
-		}
-
-		ul {
-			display: table;
-			margin: 0 auto;
-			padding-left: 0;
-
-			li {
-				list-style: none;
-				font-size: 18px;
-
-				@media (min-width: @width-elg) {
-			  		font-size: 1.3em;
-				}
-			}
-		}
-	}
-
-	.border-dashed {
-		border: 1px dashed #009090;
-		padding: 4px;
-		margin: 4px;
-
-		@media (min-width: @width-ss) {
-			border: none;
-			padding: 0;
-		}
-	}
-}
-
 .block {
 	display: block;
 }
@@ -329,10 +284,8 @@ header {
 	    height: 80px;
 	    width: 80px;
 	    position: relative;
-	    transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
-	    transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    transition: all 1s, transform 0.7s ease-in-out 0.4s, 
-	    -webkit-transform 0.7s ease-in-out 0.4s;
+    	.transition (@args: all 1s);
+    	.transform (@args: 0.7s ease-in-out 0.4s);
 
 		p {
 			font-family: Papyrus, Sans-serif;
@@ -341,29 +294,19 @@ header {
 	    	font-size: 39px;
 	    	text-transform: uppercase;
 	    	position: absolute;
-	    	transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s;
 	    	.transition (@args: all 1s);
 	    	.transform (@args: 0.7s ease-in-out 0.4s);
 		}
 
 		.w {
-			.transform (@args: rotate(-90deg));
+			.rotate (@deg: -90deg);
 			left: 39px;
     		top: 1.5px;
-	    	.transition (@args: all 1s);
-	    	.transform (@args: 0.7s ease-in-out 0.4s);
-	    	.transition (@args: all 1s);
 		}
 
 		.e {
 			left: 5px;
-			-webkit-transform: rotate(-180deg);
-			transform: rotate(-180deg);
-	    	transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    	transition: all 1s, transform 0.7s ease-in-out 0.4s, 
-	    	-webkit-transform 0.7s ease-in-out 0.4s;
+			.rotate (@deg: -180deg);
 		}
 	}
 
@@ -371,25 +314,22 @@ header {
 		display: block;
 		background-repeat: no-repeat;
 		.sprite-retina(@b-x1);
+	    .opacity (@opacity: 0);
 		top: 20px;
 	    left: 28px;
 	    position: relative;
-	      
-	    transition: all 1s, -webkit-transform 0.7s ease-in-out 0.4s;
-	      
-	    transition: all 1s, transform 0.7s ease-in-out 0.4s;
-	    .opacity (@opacity: 0);
-	    transition: all 1s, transform 0.7s ease-in-out 0.4s, -webkit-transform 0.7s ease-in-out 0.4s;
+    	.transition (@args: all 1s);
+    	.transform (@args: 0.7s ease-in-out 0.4s);
 	}
 
 	&:hover i.b {
 		display: block;
 		background-repeat: no-repeat;
 		.sprite-retina(@b-x1);
+	    .opacity (@opacity: 1);
 		top: 17px;
 	    left: 85px;
 	    position: relative;
-	    .opacity (@opacity: 1);
 	}
 
 	&:hover .we {
@@ -398,14 +338,12 @@ header {
 
 	&:hover .we .w {
 		left: 3px;
-		-webkit-transform: rotate(0deg);
-		        transform: rotate(0deg);
+		.rotate (@deg: 0deg);
 	}
 
 	&:hover .we .e {
 		left: 45px;
-		-webkit-transform: rotate(0deg);
-		        transform: rotate(0deg);
+		.rotate (@deg: 0deg);
 	}
 
 	.title {
@@ -579,7 +517,7 @@ main {
 .post-show {
 	position: relative;
 	width: auto;
-	height: 200px;
+	min-height: 500px;
 	z-index: -999998;
 
 	.post-show-img {
@@ -742,244 +680,6 @@ main {
     height: 100%;
     width: auto;
     z-index: 1;
-}
-
-#portfolio {
-	margin-top: 15px;
-
-	.nav-portfolio {
-		padding-bottom: 14px;
-	    text-align: center;
-
-		button {
-			padding: 14px 40px;
-			font-size: 24px;
-			color: #4e4e4e;
-			margin: 1%;
-			.border-radius(30px);
-			border: 3px solid #009090;
-			background: #fff;
-			transition: all 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-			transition: all 0.3s, transform 0.3s ease-in-out 0.3s;
-			transition: all 0.3s, transform 0.3s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-
-			&:hover {
-				background: #009090;
-				color: #fff;
-				transition: all 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-				transition: all 0.3s, transform 0.3s ease-in-out 0.3s;
-				transition: all 0.3s, transform 0.3s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-			}
-		}
-
-		.active {
-			position: relative;
-			background: #009090;
-			color: #fff;
-			transition: all 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-			transition: all 0.3s, transform 0.3s ease-in-out 0.3s;
-			transition: all 0.3s, transform 0.3s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-
-			&:after {
-				display: none;
-				position: absolute;
-				bottom: -3px;
-				margin: 0 auto;
-			    left: 0;
-			    right: 0;
-			    width: 0px;
-				content: ''; 
-			    position: absolute; /* Абсолютное позиционирование */
-			    border: 10px solid transparent; /* Прозрачные границы */
-			    border-bottom: 10px solid #fff; /* Добавляем треугольник */
-			
-				@media (min-width: @width-md) {
-					display: block;
-				}
-			}
-		}
-	}
-
-	.content-portfolio {
-		width: 100%;
-
-		.content-center-portfolio {
-			margin: 0 auto;
-			max-width: 370px;
-			min-width: 370px;
-			min-height: 313px;
-			transition: width 0.2s;
-
-			@media (min-width: @width-ls) {
-				max-width: 780px;
-				min-width: 370px;
-			}
-
-			@media (min-width: @width-md) {
-				max-width: 960px;
-				min-width: 370px;
-			}
-
-			@media (min-width: @width-lg) {
-				max-width: 1160px;
-				min-width: 370px;
-			}
-
-			.image-box {
-				float: left;
-				cursor: pointer;
-				margin-bottom: 20px;
-				margin-right: 10px;
-				margin-left: 10px;
-				width: 370px;
-
-				@media (min-width: @width-md) {
-					width: 300px;
-				}
-
-				@media (min-width: @width-lg) {
-					width: 270px;
-				}
-
-			    a.overlay-container {
-
-			    	.obj {
-				    	background: #4e4e4e;
-			    		-webkit-display: -webkit-flex;
-			    		-ms-display: -ms-flexbox;
-			    		display: flex;
-			    		max-width: 100%;
-					    height: 250px;
-					    position: relative;
-
-				    	img {
-							display: block;
-						    max-width: 100%;
-						    max-height: 100%;
-						    margin: auto;
-				    	}
-				    }
-
-				    span.btn-title {
-				    	display: block;
-				    	background: #009090;
-				    	color: #fff;
-					    border: 1px solid #4e4e4e;
-					    padding: 10px;
-					    text-align: center;
-				    }
-			    }
-			}
-		}
-	}
-}
-
-.active-modal {
-	display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    overflow: auto;
-    font-size: 12px;
-    line-height: 16px;
-    background: #000;
-    background: rgba(0,0,0,0.85);
-
-    .wrap {
-    	width: 100%;
-	    height: 100%;
-	    margin: 0;
-	    padding: 0;
-	    display: table;
-
-	    .tr {
-	    	display: table-cell;
-		    vertical-align: middle;
-		    text-align: center;
-		    width: 100%;
-		    margin: 0;
-		    padding: 0;
-
-		    .td {
-		    	display: inline-block;
-			    margin: 0 auto;
-			    text-align: left;
-			    position: relative;
-
-			    .data {
-			    	max-width: 1000px;
-				    text-align: left;
-				    background: #fff;
-				    position: relative;
-				    margin: 25px;
-				    .border-radius(8px);
-
-				    .close {
-				    	position: absolute;
-					    top: 25px;
-					    right: 20px;
-					    cursor: pointer;
-					    transition: all 200ms;
-					    -webkit-transform: translate3d(0,0,0);
-					            transform: translate3d(0,0,0);
-				    }
-
-				    .svg.close {
-				    	width: 15px;
-					    height: 15px;
-					    background: url(/images/design/svg/close_mw.svg) no-repeat;
-					    background-size: contain;
-					    display: inline-block;
-				    }
-
-				    .content {
-
-				    	.termofuse {
-				    		width: 140px;
-    						padding: 60px 60px 30px 60px;
-
-							@media (min-width: @width-ss) {
-						    	width: 300px;
-							}
-
-							@media (min-width: @width-ls) {
-						    	width: 640px;
-							}
-
-    						@media (min-width: @width-md) {
-						    	width: 840px;
-							}
-
-							@media (min-width: @width-lg) {
-						    	width: 1000px;
-							}
-
-    						.title {
-    							font-size: 30px;
-							    line-height: 34px;
-							    color: #67788d;
-
-							    .content-modal {
-							    	padding-top: 20px;
-								    font-size: 14px;
-								    line-height: 20px;
-							    }
-    						}
-				    	}
-				    }
-			    }
-		    }
-	    }
-    }
-}
-
-#profi {
-	li {
-		padding-top: 4px;
-	}
 }
 
 .contact {
