@@ -47,7 +47,8 @@
 	<meta name="format-detection" content="address=no">
 	<!-- Распознание адресов -->
 	<link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<!-- Сглаживание для IE -->
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
 <body data-spy="scroll">
 	<div id="page-preloader">
@@ -84,7 +85,7 @@
 			<div class="one">
 				<ul class="nav-tabs" id="myTab">
 					<li class="active">
-						<a href="#post-show" hreflang="ru" data-toggle="tab">Главная</a>
+						<a href="#block-video" hreflang="ru" data-toggle="tab">Главная</a>
 					</li>
 					<li>
 						<a href="#about" hreflang="ru" data-toggle="tab">Обо мне</a>
@@ -102,7 +103,7 @@
 			<div class="center nav">
 				<ul class="nav-tabs" id="myTab">
 					<li class="active">
-						<a href="#post-show" hreflang="ru" data-toggle="tab">Главная</a>
+						<a href="#block-video" hreflang="ru" data-toggle="tab">Главная</a>
 					</li>
 					<li id="activeClassMyTab1">
 						<a href="#about" hreflang="ru" data-toggle="tab">Обо мне</a>
@@ -128,8 +129,8 @@
 	</header>
 	<main>
 		<div class="content">
-			<div id="post-show" class="post-show z-i0">
-				<div class="post-show-img" id="img-parallax">
+			<div id="block-video" class="block-video z-i0">
+				<div class="block-video-bg">
 					<video id="video" autobuffer autoloop loop autoplay poster="video/Hello-World.jpg">
 						<source src="video/Hello-World.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 						<source src="video/Hello-World.ogv" type='video/ogg; codecs="theora, vorbis"'>
@@ -138,20 +139,12 @@
 				<div class="center" id="hitop">
 					<h1 class="center">Я Михаил Петейчук</h1>
 					<br>
-					<strong>Я Front-End разработчик:</strong>
-					<p>
-						Занимаюсь версткой веб страниц под различные устройства.
-					</p>
-					<div class="devise">
-						<i class="fa fa-television"></i>
-						<i class="fa fa-desktop"></i>
-						<i class="fa fa-laptop"></i>
-						<i class="fa fa-tablet"></i>
-						<i class="fa fa-mobile"></i>
-					</div>
+					<strong>Front-End разработчик</strong>
 				</div>
 				<div class="center down-block" id="hibtn">
-					<i class="down fa fa-angle-double-down"></i>
+					<a href="#about" class="down">
+						<i class="fa fa-angle-double-down"></i>
+					</a>
 				</div>
 			</div>
 			<div class="about" id="about">
@@ -165,17 +158,13 @@
 					<div class="right">
 						<div class="context">
 							<div class="arrow-left"></div>
-							<h3>Сколько в вебе?</h3>
-							<p>Ознакомлен с веб разработкой был в 2007 году. Серьезно начал заниматься с начала 2015 года, за это времья провел много времени в изучении новых обновленный материалов, постоянно занимаюсь самообразованием.
-							<br>
-							<h3>Мои достижения</h3>
 							<p>Опыт работы в команде с использование системы контроля версий Git и управлением задачами при помощи трекинговых систем. Разработал свой персональный Веб-сайт. Работал с адаптивной версткой (Media Query). Использование CSS препроцессора LESS и инструмента для сборки Grunt. Использование JavaScript и jQuery для интерактивности. Совместимость со спецификацией W3C.</p>
 							<div class="download">
 								<a href="#info">
 									<i class="fa fa-paper-plane"></i>
 									Написать мне
 								</a>
-								<a href="https://drive.google.com/file/d/0B6WVVENx_-7NR2FTR0MzaHhiQnc/view?usp=sharing" target="_blank">
+								<a href="https://drive.google.com/file/d/0B6WVVENx_-7NR2FTR0MzaHhiQnc/view?usp=sharing" rel="nofollow" target="_blank">
 									<i class="fa fa-download"></i>
 									Скачать резюме
 								</a>
@@ -185,10 +174,59 @@
 				</div>
 			</div>
 			<div class="skills">
-				<h1 class="center">Навыки</h1>
+				<div class="container">
+					<aside>
+						<h4>Навыки</h4>
+					</aside>
+					<main>
+						<p>
+							Основные используемые технологии
+						</p>
+						<div class="html">
+							<i class="fa fa-html5"></i>
+							<span>HTML 5</span>
+						</div>
+						<div class="css">
+							<i class="fa fa-css3"></i>
+							<span>CSS 3</span>
+						</div>
+						<div class="javascript">
+							<span>JavaScript</span>
+						</div>
+						<div class="jq">
+							<span>jQuery</span>
+						</div>
+						<div class="grunt">
+							<span>Grunt</span>
+						</div>
+						<div class="less">
+							<span>LESS</span>
+						</div>
+						<div class="git">
+							<i class="fa fa-git-square"></i>
+							<span>Git</span>
+						</div>
+						<div class="adobeps">
+							<span>Photoshop</span>
+						</div>
+						<div class="bower">
+							<span>Bower</span>
+						</div>
+						<div class="sass">
+							<span>SASS</span>
+						</div>
+						<div class="jade">
+							<span>Jade</span>
+						</div>
+						<div class="bootstrap">
+							<span>Bootstrap</span>
+						</div>
+					</main>
+					<div class="cb"></div>
+				</div>
 			</div>
 			<div class="object-non-visible" id="portfolio">
-				<h1 class="center margins" id="p1">Мои работы</h1>
+				<h1 class="center margins" id="p1">Портфолио</h1>
 				<div class="content-portfolio">
 					<div class="content-center-portfolio">
 						<div class="image-box">
@@ -202,7 +240,7 @@
 														<div class="title">Сайт визитка</div>
 														<div class="content-modal">
 															<p>Создание с нуля</p>
-															<a href="http://peteichuk.com" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
+															<a href="http://peteichuk.com" rel="nofollow" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
 														</div>
 													</div>
 												</div>
@@ -229,7 +267,7 @@
 														<div class="title">Сайт выставка</div>
 														<div class="content-modal">
 															<p>Верстка HTML + CSS</p>
-															<a href="http://fur-expo.com" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
+															<a href="http://fur-expo.com" rel="nofollow" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
 														</div>
 													</div>
 												</div>
@@ -256,7 +294,7 @@
 														<div class="title">Раскрутка сайтов</div>
 														<div class="content-modal">
 															<p>Верстка уже по готовым CSS стилям, только добавление статических HTML страниц</p>
-															<a href="http://topseo.ua" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
+															<a href="http://topseo.ua" rel="nofollow" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
 														</div>
 													</div>
 												</div>
@@ -283,7 +321,7 @@
 														<div class="title">Интернет магазин</div>
 														<div class="content-modal">
 															<p>Верстка блога</p>
-															<a href="http://mol.com.ua/blog.html" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
+															<a href="http://mol.com.ua/blog.html" rel="nofollow" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
 														</div>
 													</div>
 												</div>
@@ -310,7 +348,7 @@
 														<div class="title">Интернет магазин</div>
 														<div class="content-modal">
 															<p>Верстка Сайта</p>
-															<a href="http://kedoff.net" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
+															<a href="http://kedoff.net" rel="nofollow" target="_blank">Перейти на сайт<i class="fa fa-link"></i></a>
 														</div>
 													</div>
 												</div>
@@ -413,12 +451,12 @@
 	<footer>
 		<div class="social">
 			<div class="layer">
-				<a href="https://www.linkedin.com/in/peteichuk" title="Посмотреть профиль Связаны" target="_blank">
+				<a href="https://www.linkedin.com/in/peteichuk" rel="nofollow" title="Посмотреть профиль Связаны" target="_blank">
 					<i class="fa fa-linkedin"></i>
 				</a>
 			</div>
 			<div class="layer">
-				<a href="mailto:michael.peteichuk@gmail.com" title="Написать разработчику" target="_blank">
+				<a href="mailto:michael.peteichuk@gmail.com" rel="nofollow" title="Написать разработчику" target="_blank">
 					<i class="fa fa-at"></i>
 				</a>
 			</div>
@@ -434,14 +472,13 @@
 			</div>
 		</div>
 		<div class="elements">
-			<a href="http://peteichuk.com" hreflang="ru" class="swing" title="Сайт визитка">http://peteichuk.com</a>
+			<a href="http://peteichuk.com" rel="nofollow" hreflang="ru" class="swing" title="Сайт визитка">http://peteichuk.com</a>
 		</div>
 	</footer>
 	<!-- style -->
 	<link rel="stylesheet" type="text/css" href="css/all.min.css?1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="nofollow">
 	<!--Nav-->
-	<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
 	<script type="text/javascript" src="/js/all.min.js"></script>
 	<!--/Nav-->
 	<script>

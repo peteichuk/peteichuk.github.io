@@ -4,7 +4,7 @@
     var handleBockSize = function() {
     	var hg = $(window).height();
 		var wd = $(window).width();
-	    $('#post-show').css({height: hg + "px", width: wd + "px"});
+	    $('#block-video').css({height: hg + "px", width: wd + "px"});
 	}
 	$(window).on('resize', handleBockSize);
 	$(window).on('load', handleBockSize);
@@ -14,6 +14,4 @@
 		$('#hitop').css({'top': st * 0.3 + "px"});
 		$('#hibtn').css({'bottom': st * 0.2 + "px"});
 	});
-	
-	
 });
