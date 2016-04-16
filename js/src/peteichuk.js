@@ -1,22 +1,4 @@
 $(function() {
-	//Переключение класов по id на странице
-	$('#myTab a[href*="#"], .down').bind('click', function(e) {
-		e.preventDefault();
-		var target = $(this).attr("href");
-		$('html, body').stop().animate(
-			{ scrollTop: $(target).offset().top - 80}, 
-			500, 
-			function() {
-				location.hash = target;
-			}
-		);
-		return false;
-	});
-	//Плавный переход навигации на странице
-	$('#myTab a').click(function (e) {
-		e.preventDefault();
-		$(this).tab('show');
-	});
 	//Коректировка активности навбара при скроле по странице
 	$('#navbar').scrollspy();
 	//Проверка формы
@@ -39,7 +21,7 @@ $(function() {
 		else{
 		    $('#desktop').removeClass('opacity');
 		}
-		//activatescroll
+		//activate scroll
 		var activeClassMyTab1 = $("#activeClassMyTab1").attr('class');
 		var activeClassMyTab2 = $("#activeClassMyTab2").attr('class');
 		var activeClassMyTab3 = $("#activeClassMyTab3").attr('class');
