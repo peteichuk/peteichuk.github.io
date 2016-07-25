@@ -8,35 +8,35 @@ module.exports = function(grunt) {
                 livereload: true
             },
             less: {
-                files: ['public/css/less/*.less'],
+                files: ['css/less/*.less'],
                 tasks: ['pless'],
                 options: {
                     livereload: true
                 }
             },
             sass: {
-                files: ['public/css/sass/*.sass'],
+                files: ['css/sass/*.sass'],
                 tasks: ['sass'],
                 options: {
                     livereload: true
                 }
             },
             jade: {
-                files: ['public/jade/*.jade'],
+                files: ['jade/*.jade'],
                 tasks: ['jade'],
                 options: {
                     livereload: true
                 }
             },
             js: {
-                files: ['public/js/src/*.js'],
+                files: ['js/src/*.js'],
                 tasks: ['pjs'],
                 options: {
                     livereload: true
                 }
             },
             sprite: {
-                files: ['public/images/design/sprites/*.png'],
+                files: ['images/design/sprites/*.png'],
                 tasks: ['sprite', 'pless'],
                 options: {
                     livereload: true
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                     sourceMapURL: '/css/all.min.css.map' // Todo: Don't use in the production version
                 },
                 files: {
-                    'public/css/all.min.css': ['public/css/less/bootstrap.less']
+                    'css/all.min.css': ['css/less/bootstrap.less']
                 }
             }
         },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'public/css/all.sass.min.css': ['public/css/sass/bootstrap.sass']
+                    'css/all.sass.min.css': ['css/sass/bootstrap.sass']
                 }
             }
         },
@@ -83,10 +83,10 @@ module.exports = function(grunt) {
                     sourceMap: true //false
                 },
                 src: [
-                    'vendor/bower_components/jquery/dist/jquery.min.js',
-                    'public/js/dist/all.min.js'
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'js/dist/all.min.js'
                 ],
-                dest: 'public/js/all.min.js'
+                dest: 'js/all.min.js'
             }
         },
         uglify: {
@@ -96,22 +96,22 @@ module.exports = function(grunt) {
                     //sourceMapIncludeSources : true //false
                 },
                 files: {
-                    'public/js/dist/all.min.js': ['public/js/dist/all.js']
+                    'js/dist/all.min.js': ['js/dist/all.js']
                 }
             }
         },
         sprite: {
             x1: {
-                src: 'public/images/design/sprites/*-x1.png',
-                destImg: 'public/images/design/icon-x1.png',
-                destCSS: 'public/css/less/sprites-x1.less',
+                src: 'images/design/sprites/*-x1.png',
+                destImg: 'images/design/icon-x1.png',
+                destCSS: 'css/less/sprites-x1.less',
                 imgPath: '/images/design/icon-x1.png?' + '<%= pkg.spriteRevision %>',
                 padding: 2
             },
             x2: {
-                src: 'public/images/design/sprites/*-x2.png',
-                destImg: 'public/images/design/icon-x2.png',
-                destCSS: 'public/css/less/sprites-x2.less',
+                src: 'images/design/sprites/*-x2.png',
+                destImg: 'images/design/icon-x2.png',
+                destCSS: 'css/less/sprites-x2.less',
                 imgPath: '/images/design/icon-x2.png?' + '<%= pkg.spriteRevision %>',
                 padding: 4
             }
@@ -122,7 +122,7 @@ module.exports = function(grunt) {
                     banner: '/* Created by Peteichuk | 2016 */\n'
                 },
                 files: {
-                    src: ['public/js/all.min.js']
+                    src: ['js/all.min.js']
                 }
             },
             css: {
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
                     banner: '<%= banner %>'
                 },
                 files: {
-                    src: ['public/css/all.min.css']
+                    src: ['css/all.min.css']
                 }
             }
         },
@@ -140,7 +140,7 @@ module.exports = function(grunt) {
                     client: false,
                     runtime: false,
                     pretty: true, //compress
-                    basePath: 'public/jade/'
+                    basePath: 'jade/'
                 },
                 files: {
                     'public/': ['public/jade/*.jade']
@@ -173,5 +173,5 @@ module.exports = function(grunt) {
     grunt.registerTask('jsmin-sourcemap');
 
     // Default action
-    grunt.registerTask('default', ['sprite', 'pless', 'pjs', 'jade', 'watch']);
+    grunt.registerTask('default', ['sprite', 'pless', 'pjs', 'watch']);
 };
