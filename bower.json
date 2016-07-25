@@ -1,0 +1,11 @@
+{
+    "name": "peteichuk.com",
+    "devDependencies": {
+        "petjs": "latest",
+        "jquery": "latest",
+        "jquery.lazyload": "latest",
+        "jquery-maskedinput": "latest",
+        "elevatezoom": "latest"
+    },
+    "private": "true"
+}
