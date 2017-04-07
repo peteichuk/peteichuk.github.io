@@ -8,8 +8,6 @@
 			background: #4E4E4E;
 			margin:0;
 		}
-		#content {
-		}
 		#page-preloader {
 			position: fixed;
 			left: 0;
@@ -26,6 +24,7 @@
 			top: 50%;
 			margin: -16px 0 0 -16px;
 			cursor: wait;
+			transition: all 0.2s;
 		}
 		.spinner i {
 			color: #00cece;
@@ -57,7 +56,7 @@
 	<!-- Сглаживание для IE -->
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
-<body data-spy="scroll">
+<body>
 	<div id="page-preloader">
 		<span class="spinner">
 			<i class="fa fa-spinner fa-spin"></i>
@@ -74,7 +73,15 @@
 	<!--<link rel="stylesheet" type="text/css" href="css/all.min.css?2">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="nofollow">
 	<!--Nav-->
-	<script type="text/javascript" src="/js/all.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var spinner = document.getElementById('page-preloader');
+			spinner.querySelector('.spinner').style.opacity = 0;
+			setTimeout(function() {
+				spinner.style.display = none;
+			}, 200);
+		}
+	</script>
 	<!--/Nav-->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
