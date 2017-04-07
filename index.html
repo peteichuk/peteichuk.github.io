@@ -130,17 +130,19 @@
 			}(typeof global !== "undefined" ? global : this));
 
 			//loading files
-			//css files
-			//loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+			setTimeout(function() {
+				//css files
+				loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
 
-			//scripts fn
-// 				function createScript(srcScript) {
-// 					var script = document.createElement('script');
-// 					script.src = srcScript;
-// 					document.body.appendChild(script);
-// 				}
-			//JS file src
-// 				createScript('js/all.min.js');
+				//scripts fn
+	// 				function createScript(srcScript) {
+	// 					var script = document.createElement('script');
+	// 					script.src = srcScript;
+	// 					document.body.appendChild(script);
+	// 				}
+				//JS file src
+	// 				createScript('js/all.min.js');
+			}, 200);
 			
 			//stop spinner
 			var spinner = document.getElementById('page-preloader');
