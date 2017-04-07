@@ -2,7 +2,16 @@
 <html lang="ru">
 <head>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Создание адаптивных сайтов - Nggawe Camping adaptif | Михаил Петейчук - Michael Peteichuk</title> 
+	
+	<meta name="description" content="Веб разработка, верстка, адаптация сайта, создание, все устройства - Михаил Петейчук Web Developer.">
+	<meta name="keywords" content="Веб разработка, Веб верстка, адаптивная верстка, адаптация сайта, HTML, CSS, JavaScript, jQuery, LESS, Jade, div, psd, верстать сайт, валидная, сематическая, параласт эффект">
+
+	<link rel="canonical" href="http://peteichuk.com" />
+	<link rel="alternate" hreflang="en" href="http://peteichuk.com">
+	
 	<style type="text/css">
 		body {
 			background: #4E4E4E;
@@ -38,23 +47,6 @@
 			transform:scale(1.2);
 		}
 	</style>
-	<meta name="viewport" content="width=device-width">
-	<meta name="description" content="Веб разработка, верстка, адаптация сайта, создание, все устройства - Михаил Петейчук Web Developer.">
-	<meta name="keywords" content="Веб разработка, Веб верстка, адаптивная верстка, адаптация сайта, HTML, CSS, JavaScript, jQuery, LESS, Jade, div, psd, верстать сайт, валидная, сематическая, параласт эффект">
-	<title>Создание адаптивных сайтов - Nggawe Camping adaptif | Михаил Петейчук - Michael Peteichuk</title> 
-	<link rel="canonical" href="http://peteichuk.com" />
-	<!-- Указание языка сайта-->
-	<link rel="alternate" hreflang="ru" href="http://peteichuk.com">
-	<!-- добавленные -->
-	<meta name="robots" content="Index,follow">
-	<!-- Индексирование -->
-	<meta name="format-detection" content="telephone=no">
-	<!-- Распознание номеров телефона -->
-	<meta name="format-detection" content="address=no">
-	<!-- Распознание адресов -->
-	<link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
-	<!-- Сглаживание для IE -->
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
 <body>
 	<div id="page-preloader">
@@ -69,12 +61,87 @@
 			</a>
 		</main>
 	</section>
-	<!-- style -->
-	<!--<link rel="stylesheet" type="text/css" href="css/all.min.css?2">-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="nofollow">
-	<!--Nav-->
-	<script type="text/javascript">
-		window.onload = function() {
+	
+	<script type="text/javascript" async="async">
+		window.onload = function () {
+			(function (w) {
+				"use strict";
+				var loadCSS = function (href, before, media) {
+					var doc = w.document;
+					var ss = doc.createElement("link");
+					var ref;
+					if (before) {
+						ref = before;
+					}
+					else {
+						var refs = ( doc.body || doc.getElementsByTagName("head")[0] ).childNodes;
+						ref = refs[refs.length - 1];
+					}
+					var sheets = doc.styleSheets;
+					ss.rel = "stylesheet";
+					ss.href = href;
+					ss.media = "only x";
+					function ready(cb) {
+						if (doc.body) {
+							return cb();
+						}
+						setTimeout(function () {
+							ready(cb);
+						});
+					}
+
+					ready(function () {
+						ref.parentNode.insertBefore(ss, ( before ? ref : ref.nextSibling ));
+					});
+					var onloadcssdefined = function (cb) {
+						var resolvedHref = ss.href;
+						var i = sheets.length;
+						while (i--) {
+							if (sheets[i].href === resolvedHref) {
+								return cb();
+							}
+						}
+						setTimeout(function () {
+							onloadcssdefined(cb);
+						});
+					};
+
+					function loadCB() {
+						if (ss.addEventListener) {
+							ss.removeEventListener("load", loadCB);
+						}
+						ss.media = media || "all";
+					}
+
+					if (ss.addEventListener) {
+						ss.addEventListener("load", loadCB);
+					}
+					ss.onloadcssdefined = onloadcssdefined;
+					onloadcssdefined(loadCB);
+					return ss;
+				};
+				if (typeof exports !== "undefined") {
+					exports.loadCSS = loadCSS;
+				}
+				else {
+					w.loadCSS = loadCSS;
+				}
+			}(typeof global !== "undefined" ? global : this));
+
+			//loading files
+			//css files
+			loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+			//scripts fn
+// 				function createScript(srcScript) {
+// 					var script = document.createElement('script');
+// 					script.src = srcScript;
+// 					document.body.appendChild(script);
+// 				}
+			//JS file src
+// 				createScript('js/all.min.js');
+			
+			//stop spinner
 			var spinner = document.getElementById('page-preloader');
 			spinner.querySelector('.spinner').style.opacity = 0;
 			setTimeout(function() {
@@ -82,7 +149,7 @@
 			}, 200);
 		}
 	</script>
-	<!--/Nav-->
+	
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
