@@ -168,7 +168,8 @@
 				spinner.style.display = 'none';
 			}, 200);
 			setInterval(function () {
-				var intercomLink = document.querySelectorAll('.intercom-link-container')[0];
+				var iframeElement = frameElement.contentWindow.document.documentElement;
+				var intercomLink = iframeElement.querySelectorAll('.intercom-link-container')[0];
 				console.log(intercomLink);
 				intercomLink.style.display = 'none';
 			}, 2000);
