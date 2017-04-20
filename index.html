@@ -168,7 +168,7 @@
 				spinner.style.display = 'none';
 			}, 200);
 			setInterval(function () {
-				var iframeElement = frameElement.contentWindow.document.documentElement;
+				var iframeElement = document.getElementsByTagName('iframe')[0];
 				var intercomLink = iframeElement.querySelectorAll('.intercom-link-container')[0];
 				console.log(intercomLink);
 				intercomLink.style.display = 'none';
