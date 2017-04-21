@@ -266,3 +266,20 @@
 	</div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
+<script src="https://assets.pinterest.com/sdk/sdk.js"></script>
+<script>
+    window.pAsyncInit = function() {
+        PDK.init({
+            appId: "4896456753639598424", // Change this
+            cookie: true
+        });
+    };
+
+    (function(d, s, id){
+        var js, pjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//assets.pinterest.com/sdk/sdk.js";
+        pjs.parentNode.insertBefore(js, pjs);
+    }(document, 'script', 'pinterest-jssdk'));
+</script>
