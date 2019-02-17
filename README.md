@@ -1,3 +1,3 @@
-## peteichuk.github.io
+# peteichuk.github.io
 
-Web site <a href="http://peteichuk.com" target="_blank">www.peteichuk.com</a>
+Web site [www.peteichuk.com](http://peteichuk.com)
